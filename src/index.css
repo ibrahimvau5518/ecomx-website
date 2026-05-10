@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-color: #0B0F1A;
+    color: #F9FAFB;
+  }
+
+  * {
+    @apply border-border;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20 px-6 md:px-12 max-w-7xl mx-auto;
+  }
+  
+  .card-container {
+    @apply bg-card text-foreground border border-border rounded-[var(--radius)] shadow-lg transition-all duration-300;
+  }
+  
+  .input-field {
+    @apply flex h-12 w-full rounded-md border border-border bg-background-secondary px-4 py-2 text-sm text-foreground ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-foreground-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent disabled:cursor-not-allowed disabled:opacity-50 transition-all;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none bg-gradient-bp text-white hover:shadow-glow hover:scale-[1.02] active:scale-95 h-12 py-2 px-6;
+  }
+  
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-lg text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border focus-visible:ring-offset-background hover:border-foreground-muted disabled:opacity-50 disabled:pointer-events-none border border-border hover:bg-card hover:text-white h-12 py-2 px-6 active:scale-95 shadow-sm;
+  }
+}
